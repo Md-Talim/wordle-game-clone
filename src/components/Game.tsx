@@ -1,7 +1,20 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
+const GuessResults = ({ guesses }: { guesses: string[] }) => {
+  return (
+    <div className="guess-results">
+      {guesses.map((guess, index) => (
+        <p className="guess" key={index}>
+          {guess}
+        </p>
+      ))}
+    </div>
+  );
+};
+
 const Game = () => {
   const [value, setValue] = useState('');
+  const [guesses, setGuesses] = useState(['']);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -13,8 +26,8 @@ const Game = () => {
       return;
     }
 
-    console.log({ value });
-
+    // Add the entered value to the guesses array
+    setGuesses([...guesses, value]);
     setValue('');
   };
 
@@ -25,18 +38,21 @@ const Game = () => {
   };
 
   return (
-    <form className="guess-input-wrapper" onSubmit={handleSubmit}>
-      <label htmlFor="guess-input">Enter guess:</label>
-      <input
-        id="guess-input"
-        maxLength={5}
-        minLength={5}
-        onChange={handleChange}
-        required
-        type="text"
-        value={value}
-      />
-    </form>
+    <>
+      <GuessResults guesses={guesses} />
+      <form className="guess-input-wrapper" onSubmit={handleSubmit}>
+        <label htmlFor="guess-input">Enter guess:</label>
+        <input
+          id="guess-input"
+          maxLength={5}
+          minLength={5}
+          onChange={handleChange}
+          required
+          type="text"
+          value={value}
+        />
+      </form>
+    </>
   );
 };
 
