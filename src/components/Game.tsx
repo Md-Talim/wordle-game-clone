@@ -1,16 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-
-const GuessResults = ({ guesses }: { guesses: string[] }) => {
-  return (
-    <div className="guess-results">
-      {guesses.map((guess, index) => (
-        <p className="guess" key={index}>
-          {guess}
-        </p>
-      ))}
-    </div>
-  );
-};
+import GuessResults from './GuessResults';
 
 const Game = () => {
   const [value, setValue] = useState('');
