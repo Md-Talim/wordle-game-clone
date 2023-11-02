@@ -24,7 +24,6 @@ const Game = ({ answer }: { answer: string }) => {
 
   return (
     <>
-      {gameStatus}
       <GuessResults guesses={guesses} answer={answer} />
       <GuessInput
         gameStatus={gameStatus}

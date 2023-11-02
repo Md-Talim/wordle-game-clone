@@ -30,6 +30,7 @@ html {
 */
 body {
   font-family: sans-serif;
+  background-color: var(--color-gray-100);
 }
 
 @media (max-height: 600px) {
@@ -57,7 +58,7 @@ button {
 header {
   display: flex;
   height: var(--header-height);
-  border-bottom: 1px solid var(--color-gray-700);
+  border-bottom: 1px solid var(--color-gray-300);
   color: var(--color-gray-300);
 }
 
@@ -72,6 +73,7 @@ h1 {
   font-size: 2rem;
   line-height: var(--header-height);
   text-align: center;
+  color: var(--color-gray-900);
 }
 
 @media (max-width: 25rem) {
@@ -110,7 +112,7 @@ h1 {
   display: grid;
   place-content: center;
   aspect-ratio: 1 / 1;
-  border: 2px solid var(--color-gray-700);
+  border: 2px solid var(--color-gray-300);
   border-radius: var(--radius);
   font-size: 2rem;
 }
@@ -157,6 +159,7 @@ h1 {
 
 .guess-input-wrapper label {
   font-size: 1.25rem;
+  color: var(--color-gray-700);
 }
 
 .guess-input-wrapper input {
@@ -164,9 +167,16 @@ h1 {
   width: 100%;
   font-size: 2rem;
   border: 2px solid var(--color-gray-300);
+  background: var(--color-gray-300);
+  color: var(--color-gray-700);
   border-radius: 4px;
   padding: 8px 16px;
   outline-offset: 4px;
+}
+
+.guess-input-wrapper input:focus {
+  border: 2px solid var(--color-gray-500);
+  outline: none;
 }
 
 .banner {
