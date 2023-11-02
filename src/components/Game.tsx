@@ -3,7 +3,7 @@ import GuessResults from './GuessResults';
 
 const Game = () => {
   const [value, setValue] = useState('');
-  const [guesses, setGuesses] = useState(['']);
+  const [guesses, setGuesses] = useState<string[]>([]);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -16,7 +16,13 @@ const Game = () => {
     }
 
     // Add the entered value to the guesses array
-    setGuesses([...guesses, value]);
+    if (guesses.length <= 0) {
+      setGuesses([value]);
+    } else {
+      setGuesses([...guesses, value]);
+    }
+
+    console.log(guesses);
     setValue('');
   };
 
