@@ -1,10 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 interface Props {
+  gameStatus: 'running' | 'won' | 'lost';
   handleSubmitGuess: (guess: string) => void;
 }
 
-const GuessInput = ({ handleSubmitGuess }: Props) => {
+const GuessInput = ({ gameStatus, handleSubmitGuess }: Props) => {
   const [newGuess, setNewGuess] = useState('');
 
   const handleSubmit = (event: FormEvent) => {
@@ -40,6 +41,7 @@ const GuessInput = ({ handleSubmitGuess }: Props) => {
         required
         type="text"
         value={newGuess}
+        disabled={gameStatus !== 'running'}
       />
     </form>
   );
