@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import GuessResults from './GuessResults';
 
-const Game = () => {
+const Game = ({ answer }: { answer: string }) => {
   const [value, setValue] = useState('');
   const [guesses, setGuesses] = useState<string[]>([]);
 
@@ -22,7 +22,6 @@ const Game = () => {
       setGuesses([...guesses, value]);
     }
 
-    console.log(guesses);
     setValue('');
   };
 
@@ -34,7 +33,7 @@ const Game = () => {
 
   return (
     <>
-      <GuessResults guesses={guesses} />
+      <GuessResults guesses={guesses} answer={answer} />
       <form className="guess-input-wrapper" onSubmit={handleSubmit}>
         <label htmlFor="guess-input">Enter guess:</label>
         <input
