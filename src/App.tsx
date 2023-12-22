@@ -1,10 +1,10 @@
 import Game from './components/Game';
 import Header from './components/Header';
 import { WORDS } from './data';
-import { sample } from './utils';
+import { getAnswer } from './utils';
 
 const App = () => {
-  const answer = sample(WORDS);
+  const answer = getAnswer(WORDS);
 
   return (
     <div className="wrapper">

@@ -1,4 +1,4 @@
-export const sample = (arr: string[]) => {
+export const getAnswer = (arr: string[]) => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
