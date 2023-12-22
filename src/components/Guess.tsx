@@ -1,5 +1,5 @@
-import { checkGuess } from '../game-helpers';
-import { range } from '../utils';
+import { checkGuess } from '@/game-helpers';
+import { range } from '@/utils';
 
 interface Props {
   value: string;

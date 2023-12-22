@@ -1,7 +1,6 @@
-import Game from './components/Game';
-import Header from './components/Header';
-import { WORDS } from './data';
-import { getAnswer } from './utils';
+import { Game, Header } from '@/components';
+import { WORDS } from '@/data';
+import { getAnswer } from '@/utils';
 
 const App = () => {
   const answer = getAnswer(WORDS);

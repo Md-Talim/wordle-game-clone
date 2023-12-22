@@ -1,9 +1,6 @@
+import { GuessInput, GuessResults, LostBanner, WonBanner } from '@/components';
+import { NUM_OF_GUESSES_ALLOWED } from '@/constants';
 import { useState } from 'react';
-import { NUM_OF_GUESSES_ALLOWED } from '../constants';
-import GuessInput from './GuessInput';
-import GuessResults from './GuessResults';
-import LostBanner from './LostBanner';
-import WonBanner from './WonBanner';
 
 const Game = ({ answer }: { answer: string }) => {
   const [guesses, setGuesses] = useState<string[]>([]);
